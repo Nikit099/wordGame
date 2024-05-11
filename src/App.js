@@ -441,6 +441,9 @@ setRate(0)
 
  }
   function changeWords(num, lang){
+    if(!start){
+      setStart(true)
+    }
     if(lang === 'ru'){
       if(timeoutId){
        ru2 = wordsRu.filter(e => e.num === num)[0]
