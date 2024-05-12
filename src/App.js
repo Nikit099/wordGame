@@ -171,7 +171,7 @@ function App() {
       word: 'Act up'
     
   },
-  
+
   {
     id: 2,
     connect: 98,
@@ -483,31 +483,47 @@ setRate(0)
   }
   return (
     <div className="App">
-      
-      <h1 className='timer'>{timer}
-      </h1>
-
-      <h1>Рекорд {localStorage.getItem('count')}</h1>
-      <h2>Счет сейчас {rate}</h2>
-      {
-        timer > 90 ? "ЭТО ВСЁ" : (
+      <div className='body'>
+        <div className='main'>
+          <h1 className='timer'>{timer}</h1>
+          <h1>Рекорд {localStorage.getItem('count')}</h1>
+          <h2>Счет сейчас {rate}</h2>
+          {
+            timer > 90 ? "ЭТО ВСЁ" : (
           <div className='container'>
-     <div className='wordsRuPanel'>
-        
-        {wordsRu && wordsRu.sort(compareNumeric).map(e => <Word key={e.num} num={e.num} lang={'ru'} focus={e.focus}   changeWords={changeWords} word={e.word} /> )}
-      </div>
-      <div className='wordsEngPanel'>
-        
-        {wordsEng && wordsEng.sort(compareNumeric).map(e => <Word key={e.num} focus={e.focus} num={e.num} lang={'alien'} changeWords={changeWords} word={e.word} /> )}
-      </div>
-      </div>
-        )
-      }
-      
-     
-      <div onClick={() => setStart(e => !e)} className={start ? 'btnPlay' : 'btnStop'} >{start ? 'Стоп' : 'Пуск'}</div>
+            <div className='wordsRuPanel'>
+              {wordsRu && wordsRu.sort(compareNumeric).map(e => <Word key={e.num} 
+                                                                      num={e.num} 
+                                                                      lang={'ru'} 
+                                                                      focus={e.focus}   
+                                                                      changeWords={changeWords} 
+                                                                      word={e.word} /> )}
+            </div>
+            <div className='wordsEngPanel'>
+              {wordsEng && wordsEng.sort(compareNumeric).map(e => <Word key={e.num} 
+                                                                        focus={e.focus} 
+                                                                        num={e.num} 
+                                                                        lang={'alien'} 
+                                                                        changeWords={changeWords} 
+                                                                        word={e.word} /> )}
+            </div>
+          </div>
+            )
+          }
           
+        
+          <div onClick={() => setStart(e => !e)} className={start ? 'btnPlay' : 'btnStop'} >{start ? 'Стоп' : 'Пуск'}</div>
+        </div>
+        <div className='aside'>
+          <input className='inputRussianWord'
+                placeholder='русское слово'></input>
+          <input className='inputEnglishWord'
+                placeholder='английский перевод'></input>
+          <button className='buttonSubmit'>submit</button>
+        </div>
       </div>
+          
+    </div>
   );
 }
 

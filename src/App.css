@@ -5,8 +5,16 @@ html{
   background-color: rgb(43, 43, 43);
   color: rgb(212, 212, 212);
 }
+.body {
+  position: relative;
+}
+.main {
+
+}
 .timer{
   color: rgb(203, 26, 26);
+  margin-top: 0px;
+  padding: 21px 0 0 0;
 }
 .container{
   display: flex;
@@ -80,4 +88,15 @@ html{
   border-radius: 10px;
   text-align: center;
   background-color: rgb(20, 138, 61);
+}
+.aside {
+  position: absolute;
+  background-color: antiquewhite;
+  width: 20vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+}
+.inputRussianWord {
+  margin: 21px 0 0 0;
 }
